@@ -33,12 +33,13 @@ const HeaderStyle = styled.header`
 `
 const Logo = styled.p`
 color: #FE9A51;
+font-weight: bold;
 `
-const Header = () => {
+const Header = ({children}) => {
   return (
     <HeaderStyle>
       <Logo>NEBUNEALA</Logo>
-      <h1>Learn smokes, grenades and flashes and WIN your matches within seconds!</h1>
+      {children}
     </HeaderStyle>
   )
 }

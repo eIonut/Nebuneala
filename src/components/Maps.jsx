@@ -83,7 +83,9 @@ const Maps = () => {
 
   return (
     <>
-    <Header></Header>
+    <Header>
+      <h1>Learn smokes, grenades and flashes and WIN your matches within seconds!</h1>
+    </Header>
       <MapsContainer>
       {maps.map(map =>
       <MapBox key={map.mapId}>
