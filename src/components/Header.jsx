@@ -10,8 +10,13 @@ const HeaderStyle = styled.header`
   justify-content: center;
   gap: 2rem;
   padding: 10rem;
-  padding-left: 4rem;
+  padding-left: 6rem;
   font-size: 1.6rem;
+
+    @media only screen and (max-width: 1300px) {
+ padding-left: 4rem;
+
+}
 
     @media only screen and (max-width: 800px) {
  padding-left: 4rem;

@@ -2,6 +2,7 @@ import React from 'react'
 import data from '../../data'
 import Header from './Header';
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 const MapsContainer = styled.section`
 height: 100vh - 15rem;
 max-width: 100vw;
@@ -28,7 +29,7 @@ padding: 2rem;
 const MapBox = styled.div`
 position: relative;
 width: 560px;
-height: 24.4rem;
+height: 20.4rem;
 border-radius: 0.5rem;
 margin: auto;
 text-align: center;
@@ -36,14 +37,21 @@ text-align: center;
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1237px) {
+@media only screen and (max-width: 1816px) {
  width: 100%;
  height: 30rem;
 }
 
 
+@media only screen and (max-width: 1237px) {
+ width: 100%;
+ height: 30rem;
+}
 
-
+@media only screen and (max-width: 800px) {
+ width: 100%;
+ height: 20rem;
+}
 `
 
 const Image = styled.img`
@@ -61,9 +69,12 @@ const MapName = styled.span`
  font-size: 3.2rem;
  font-weight: medium;
 
+ @media only screen and (max-width: 800px) {
+ font-size: 2.4rem;
+}
+
  @media only screen and (max-width: 400px) {
  font-size: 2rem;
-
 }
 `
 
@@ -75,11 +86,15 @@ const Maps = () => {
     <Header></Header>
       <MapsContainer>
       {maps.map(map =>
-
       <MapBox key={map.mapId}>
-        <Image src={`/src/assets/images/maps-images/${map.name}.jpg`} />
-        <MapName>{map.name}</MapName>
-      </MapBox>)}
+        <Link to={`maps/${map.mapId}`}>
+          <Image src={`/src/assets/images/maps-images/${map.name}.jpg`} />
+          <MapName>{map.name}</MapName>
+        </Link>
+      </MapBox>
+
+      )}
+
     </MapsContainer>
     </>
   )
